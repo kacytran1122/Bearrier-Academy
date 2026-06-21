@@ -2,10 +2,14 @@
 
 **Know where you are. Get help fast.** · _A HackBerkeley project_
 
-B(e)arrier Academy is a calm safety game for kids (ages 6–12). It teaches the one
-thing that matters most in an emergency: **telling a rescuer exactly where you
-are.** Kids play two short rounds on a **real satellite map**, guided by **Ranger
-Bear**. Each round ends with a Safety Badge, and nothing in the game is scary.
+Meet **Ranger Bear** 🐻 — your guide, and a friendly nod to the **HackBerkeley
+bear mascot**. He leads kids through B(e)arrier Academy, a calm safety game for
+kids (ages 6–12).
+
+The game teaches the one thing that matters most in an emergency: **telling a
+rescuer exactly where you are.** Kids play two short rounds on a **real satellite
+map**, and Ranger Bear is with them the whole time. Each round ends with a Safety
+Badge, and nothing in the game is scary.
 
 ---
 
@@ -155,50 +159,82 @@ public/         static files (bear.mp4 background)
 
 ---
 
-## Future ideas
+## Future directions
 
-- Read the dispatcher's reply out loud (Deepgram text-to-speech).
-- A 3D flyover when help arrives (Google Aerial View).
-- An optional "hand-signs to a rescue drone" round.
-- A parent/teacher dashboard showing which skills a child practiced.
-- More languages and the right emergency number per country (911 / 999 / 112 / 000 / 111).
+**1. Read the helper's words out loud (voice for early readers).**
+Right now the dispatcher's replies appear as text. Many 6- and 7-year-olds cannot
+read quickly under stress, so the next step is to speak the replies aloud using
+Deepgram text-to-speech. With both ears and eyes engaged, the youngest players can
+follow the conversation, and the game becomes usable by children who cannot read
+at all yet. This also makes the experience feel more like a real phone call, which
+is exactly the situation we want kids to rehearse.
+
+**2. A parent and teacher dashboard.**
+Today a child's progress (their Safety Badges) lives only on their own device,
+which keeps things private. A future, opt-in dashboard for grown-ups would let a
+parent or teacher see which safety skills a child has practiced and where they
+need more help, plus print a family tip sheet with the child's real address and a
+meeting-spot plan to fill in together. Built carefully (teacher accounts only, no
+child data), this turns a fun game into a measurable classroom tool and gives
+families a reason to keep practicing at home.
+
+**3. Truly borderless: languages and local emergency numbers.**
+The game's motto is "building tools for a borderless world," so the clearest next
+step is to work anywhere. That means translating the game into more languages and
+automatically using the correct emergency number for the player's country (911 in
+the US and Canada, 999 in the UK, 112 across the EU, 000 in Australia, 111 in New
+Zealand). A child should learn the right number and the right words for *their*
+home, not someone else's, so the safety skill transfers directly to real life.
+
+Other ideas under consideration: a 3D flyover when help arrives (Google Aerial
+View), and an optional "hand-signs to a rescue drone" round.
 
 ---
 
 ## Inspiration and references
 
 This game is built on one well-studied idea: a message gets through faster when it
-is **clear and compact**. That idea, and the two signaling methods in the game,
-come from real history and research:
+is **clear and compact**. The "short but complete" lesson is inspired by Shannon's
+information theory [1]; Round 2 (Morse Map Rescue) is inspired by the history of
+Morse code and the SOS distress signal [2]; and Round 1 (Find Your Square) is
+inspired by what3words three-word addressing and its use by emergency services
+[3].
 
-1. **Shannon, C. E. (1948). "A Mathematical Theory of Communication."** _Bell
-   System Technical Journal, 27_(3), 379–423; 27(4), 623–656. The foundation of
-   information theory — how to encode a message efficiently. It inspired the
-   game's "short but complete" message lesson (context compression).
+**References**
 
-2. **Morse code & the SOS distress signal.** Morse code was developed by Samuel
-   F. B. Morse and Alfred Vail in the 1830s–1840s. The **SOS** signal
-   (· · · — — — · · ·) was adopted internationally at the **International
-   Radiotelegraph Convention, Berlin (1906)** and came into force in 1908,
-   precisely because a short, unmistakable signal works when voice and text do
-   not. This inspired Round 2 (Morse Map Rescue).
+[1] C. E. Shannon, "A Mathematical Theory of Communication," _Bell System
+Technical Journal_, vol. 27, no. 3, pp. 379–423, and no. 4, pp. 623–656, 1948.
+doi: 10.1002/j.1538-7305.1948.tb01338.x.
 
-3. **what3words three-word addressing.** what3words (what3words Ltd.) divides the
-   world into 3-metre squares, each with a fixed three-word name, so a precise
-   location can be spoken easily by voice. It has been adopted by emergency
-   services in several countries to locate callers. This inspired Round 1 (Find
-   Your Square). See the what3words "for emergencies" resources.
+[2] International Radiotelegraph Convention, Berlin, 1906 (in force 1 July 1908),
+which adopted **SOS** (· · · — — — · · ·) as the international distress signal.
+Morse code: S. F. B. Morse and A. Vail, electromagnetic telegraph, 1830s–1840s.
+See ITU history: <https://www.itu.int/en/history>.
+
+[3] what3words Ltd., "what3words: addressing the world with three words"
+(3 m × 3 m squares, each with a fixed three-word address; adopted by emergency
+services to locate callers). <https://what3words.com/business/emergency-services>.
 
 > These references are real and verifiable. For a formal write-up, confirm the
 > exact editions, page numbers, and current what3words emergency-service sources
 > before citing.
 
+## How to cite this project
+
+A machine-readable citation is in [`CITATION.cff`](CITATION.cff) (GitHub shows a
+**"Cite this repository"** button on the repo page). Suggested text citation:
+
+> Tran, K. (2026). _B(e)arrier Academy: a kids' safety game for saying exactly
+> where you are_ (Version 0.1.0) [Software]. HackBerkeley.
+> https://github.com/kacytran1122/Bearrier-Academy
+
 ---
 
 ## Credits
 
-Built at **HackBerkeley**. Ranger Bear 🐻, our guide, is a nod to the HackBerkeley
-bear mascot. Design spec: `../Bearrier-Academy.docx`.
+Built at **HackBerkeley**. Design spec: `../Bearrier-Academy.docx`.
 
 Built with Claude, Google Maps Platform, what3words, and Deepgram. The home page
 plays `public/bear.mp4` as its background.
+
+Licensed under the MIT License.

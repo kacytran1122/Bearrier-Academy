@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use B(e)arrier Academy, please cite it as below."
+title: "B(e)arrier Academy: a kids' safety game for saying exactly where you are"
+abstract: >-
+  A calm web game for children (ages 6-12) that teaches precise location
+  communication in emergencies using a real satellite map, what3words
+  three-word addressing, and Morse code, framed around the idea that a good
+  emergency message is short but complete (context compression).
+type: software
+authors:
+  - given-names: Kacy
+    family-names: Tran
+    email: kacytran1122@gmail.com
+    alias: kacytran1122
+date-released: "2026-06-21"
+version: "0.1.0"
+license: MIT
+url: "https://github.com/kacytran1122/Bearrier-Academy"
+repository-code: "https://github.com/kacytran1122/Bearrier-Academy"
+keywords:
+  - child safety
+  - emergency communication
+  - what3words
+  - morse code
+  - information theory
+  - educational game
+references:
+  - type: article
+    title: "A Mathematical Theory of Communication"
+    authors:
+      - given-names: Claude
+        name-particle: E.
+        family-names: Shannon
+    journal: "Bell System Technical Journal"
+    volume: 27
+    year: 1948
+    doi: "10.1002/j.1538-7305.1948.tb01338.x"
