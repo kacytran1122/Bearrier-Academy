@@ -1,5 +1,7 @@
 "use client"
 
+import LazyImage from "@/components/LazyImage"
+
 // A satellite image split into a 3x3 grid (A1..C3) that kids can click. Used by
 // the Morse and Sign rescue rounds to pick a search zone on the map.
 const ROWS = ["A", "B", "C"] as const
@@ -30,12 +32,13 @@ export default function GridMap({
 }) {
   return (
     <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0c1a14]">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={src ?? `/api/staticmap?scenario=${scenarioId}`}
-        alt="Satellite view"
-        className="absolute inset-0 h-full w-full object-cover opacity-90"
-      />
+      <div className="absolute inset-0 opacity-90">
+        <LazyImage
+          src={src ?? `/api/staticmap?scenario=${scenarioId}`}
+          alt="Satellite view"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
       <div className="absolute inset-0 grid grid-cols-3 grid-rows-3">
         {CELLS.map((cell) => {
           const isSel = selected === cell

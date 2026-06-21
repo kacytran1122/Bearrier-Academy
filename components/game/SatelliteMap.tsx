@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import type { Landmark } from "@/lib/game/types"
+import LazyImage from "@/components/LazyImage"
 
 // A self-contained "bird's-eye" map. In production this is the Google Maps
 // satellite/hybrid view (@vis.gl/react-google-maps); here it's a styled grid so
@@ -43,15 +44,12 @@ export default function SatelliteMap({
         }}
       />
 
-      {/* real Google satellite image — covers the wash when it loads */}
-      {scenarioId && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+      {/* real Google satellite image — lazily loaded; covers the wash when it loads */}
+      {scenarioId && imgOk && (
+        <LazyImage
           src={`/api/staticmap?scenario=${scenarioId}`}
           alt="Satellite view of a sample place"
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
-            showSatellite ? "opacity-100" : "opacity-0"
-          }`}
+          className="absolute inset-0 h-full w-full object-cover"
           onError={() => setImgOk(false)}
         />
       )}
