@@ -186,9 +186,6 @@ the US and Canada, 999 in the UK, 112 across the EU, 000 in Australia, 111 in Ne
 Zealand). A child should learn the right number and the right words for *their*
 home, not someone else's, so the safety skill transfers directly to real life.
 
-Other ideas under consideration: a 3D flyover when help arrives (Google Aerial
-View), and an optional "hand-signs to a rescue drone" round.
-
 ---
 
 ## Inspiration and references
@@ -214,10 +211,6 @@ See ITU history: <https://www.itu.int/en/history>.
 [3] what3words Ltd., "what3words: addressing the world with three words"
 (3 m × 3 m squares, each with a fixed three-word address; adopted by emergency
 services to locate callers). <https://what3words.com/business/emergency-services>.
-
-> These references are real and verifiable. For a formal write-up, confirm the
-> exact editions, page numbers, and current what3words emergency-service sources
-> before citing.
 
 ## How to cite this project
 
