@@ -34,6 +34,7 @@ export default function MorseRound({ onComplete }: { onComplete: (clarity: numbe
   const [target, setTarget] = useState("B2")
   const [landmark, setLandmark] = useState("River")
   const [landmarkOpts, setLandmarkOpts] = useState<string[]>(["River", "Bridge", "Parking lot", "Forest trail"])
+  const [places, setPlaces] = useState<PlaceC[]>([])
   const [words, setWords] = useState<[string, string, string] | null>(null)
   const [selected, setSelected] = useState<string | null>(null)
   const [solved, setSolved] = useState<string | null>(null)
@@ -58,6 +59,7 @@ export default function MorseRound({ onComplete }: { onComplete: (clarity: numbe
         setTarget(tcell)
         setLandmark(inCell[0])
         setLandmarkOpts(shuffle([inCell[0], ...shuffle(others).slice(0, 3)]))
+        setPlaces(placed)
       })
       .catch(() => {})
     return () => {
@@ -187,6 +189,8 @@ export default function MorseRound({ onComplete }: { onComplete: (clarity: numbe
             personEmoji="🔦"
             showLabels
             disabled={step !== "zone"}
+            landmarks={places}
+            showLandmarks={step === "landmark" || step === "message"}
           />
 
           <div className="space-y-4">
@@ -222,7 +226,9 @@ export default function MorseRound({ onComplete }: { onComplete: (clarity: numbe
                     Zone {target} address: <span className="font-mono font-semibold">{words.join(".")}</span>
                   </p>
                 )}
-                <p className="text-sm text-white/60">Which landmark is really in zone {target}?</p>
+                <p className="text-sm text-white/60">
+                  Look at the 📍 pins on the map. Which landmark is really in zone {target}?
+                </p>
                 {landmarkOpts.map((v) => (
                   <button
                     key={v}
